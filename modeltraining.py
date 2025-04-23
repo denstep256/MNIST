@@ -58,4 +58,4 @@ model.fit(datagen.flow(x_train, y_train, batch_size=32),
 test_loss, test_acc = model.evaluate(x_test, y_test)
 print(f"\nTest accuracy: {test_acc:.4f}")
 
-model.save("/Users/denstep256/Documents/project/Python/AI/MNIST-AI/Model.keras")
+model.save("/models/Model.keras")

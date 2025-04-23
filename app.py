@@ -16,7 +16,7 @@ def start_ngrok():
 @st.cache_resource
 def load_model():
     try:
-        models = keras.models.load_model("/Users/denstep256/Documents/project/Python/AI/MNIST-AI/Model.keras")
+        models = keras.models.load_model("/Users/denstep256/Documents/project/Python/AI/MNIST-AI/models/Model.keras")
         print("Model loaded successfully!")
         return models
     except Exception as ex:
@@ -75,7 +75,7 @@ def speak(text, language):
     try:
         if language == "English":
             lang = 'en'
-        elif language == "Russian":
+        elif language == "Русский":
             lang = 'ru'
 
         tts = gTTS(text=text, lang=lang, slow=False)

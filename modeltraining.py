@@ -26,7 +26,6 @@ model.add(Conv2D(32, kernel_size=3, activation='relu', input_shape=(28,28,1)))
 model.add(BatchNormalization())
 model.add(MaxPooling2D(pool_size=2))
 
-
 model.add(Conv2D(64, kernel_size=3, activation='relu'))
 model.add(BatchNormalization())
 model.add(MaxPooling2D(pool_size=2))
@@ -43,7 +42,9 @@ model.add(Dropout(0.3))
 
 model.add(Dense(10, activation='softmax'))
 
-model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+model.compile(optimizer='adam',
+              loss='categorical_crossentropy',
+              metrics=['accuracy'])
 
 
 early_stopping = EarlyStopping(monitor='val_loss', patience=3, restore_best_weights=True)
@@ -56,6 +57,6 @@ model.fit(datagen.flow(x_train, y_train, batch_size=32),
 
 
 test_loss, test_acc = model.evaluate(x_test, y_test)
-print(f"\nTest accuracy: {test_acc:.4f}")
+print(f"\nТочность: {test_acc:.4f}")
 
 model.save("/models/Model.keras")

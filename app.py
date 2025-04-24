@@ -4,7 +4,6 @@ import numpy as np
 import cv2
 from streamlit_drawable_canvas import st_canvas
 from gtts import gTTS
-import playsound
 import os
 from pyngrok import ngrok
 
